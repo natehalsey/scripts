@@ -1,11 +1,12 @@
 [Unit]
 Description=qBittorrent Daemon
-After=network.target
+After=nordvpnd.service
+Requires=nordvpnd.service
 
 [Service]
-User=YOUR_USERNAME
+User=root # maybe not good idk
 ExecStart=/usr/bin/qbittorrent-nox
-Restart=on-failure
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
