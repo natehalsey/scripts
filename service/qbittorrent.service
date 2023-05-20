@@ -1,0 +1,12 @@
+[Unit]
+Description=qBittorrent Daemon
+After=network.target
+
+[Service]
+User=YOUR_USERNAME
+ExecStart=/usr/bin/qbittorrent-nox
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
