@@ -1,0 +1,17 @@
+[Unit]
+Description=NordVPN Daemon
+Requires=nordvpnd.socket
+After=network.service
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/sbin/nordvpnd --debug
+NonBlocking=true
+Restart=always
+RuntimeDirectory=nordvpn
+RuntimeDirectoryMode=0750
+Group=nordvpn
+
+[Install]
+WantedBy=default.target
+
